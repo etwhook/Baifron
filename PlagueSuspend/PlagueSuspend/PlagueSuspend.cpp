@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {
 
     HANDLE targetProc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, procId);
 
-    if (!targetProc || targetProc == INVALID_HANDLE_VALUE) {
+    if (targetProc == NULL) {
         printf("[-] Failed To Get Process Handle\n");
         return -1;
     }
